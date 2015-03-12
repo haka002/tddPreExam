@@ -5,6 +5,20 @@
  */
 class StringToArrayTest extends PHPUnit_Framework_TestCase
 {
+	/**
+	 * StringToArray entity
+	 *
+	 * @var StringToArray
+	 */
+	protected $stringToArrayEntity;
+
+	/**
+	 * Runs before every functions.
+	 */
+	public function setup()
+	{
+		$this->stringToArrayEntity = new StringToArray();
+	}
 
 	/**
 	 * Test gets a valid array for return.
@@ -13,9 +27,7 @@ class StringToArrayTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testExistClass()
 	{
-		$stringToArray = new StringToArray();
-
-		$this->assertTrue(is_array($stringToArray->convert()));
+		$this->assertTrue(is_array($this->stringToArrayEntity->convert()));
 	}
 
 	/**
@@ -25,7 +37,7 @@ class StringToArrayTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testValidateInput()
 	{
-		$stringToArray = new StringToArray();
+
 	}
 
 
