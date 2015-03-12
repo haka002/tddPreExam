@@ -1,0 +1,9 @@
+if the first line: #useFirstLineAsLabels next line wil be a label
+create a data object with new values
+
+refact the code with new functions
+
+detect the specific first line
+  if then if need :)
+  build the array
+  set to the object and pass back

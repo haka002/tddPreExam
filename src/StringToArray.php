@@ -19,16 +19,28 @@ class StringToArray
 			throw new InvalidArgumentException();
 		}
 
-		$lines          = explode(PHP_EOL, $string);
+		$lines = explode(PHP_EOL, $string);
 
 		$splittedValues = array();
 
 		foreach ($lines as $line)
 		{
-			$splittedValue  = explode(',', $line);
+			$splittedValue = $this->parseLine($line);
 			$splittedValues = array_merge($splittedValues, $splittedValue);
 		}
 
 		return $splittedValues;
+	}
+
+	/**
+	 * Parses the line by comma.
+	 *
+	 * @param string $line   The line wich we want to parse.
+	 *
+	 * @return array   The parsed line by comma.
+	 */
+	private function parseLine($line)
+	{
+		return explode(',', $line);
 	}
 }
