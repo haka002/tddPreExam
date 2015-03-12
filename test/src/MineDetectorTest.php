@@ -41,7 +41,7 @@ class StringToArrayTest extends PHPUnit_Framework_TestCase
 	{
 		$convertedResult = $this->stringToArrayEntity->convert($convertableParam);
 
-		$this->assertEquals($expectedResult, $convertableParam);
+		$this->assertEquals($expectedResult, $convertedResult);
 	}
 
 	/**

@@ -14,11 +14,11 @@ class StringToArray
 	 */
 	public function convert($string)
 	{
-		if (!gettype($string) != 'string')
+		if (gettype($string) != 'string')
 		{
 			throw new InvalidArgumentException();
 		}
 
-		return array();
+		return explode(',', $string);
 	}
 }
