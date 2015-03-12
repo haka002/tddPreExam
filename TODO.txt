@@ -1,3 +1,4 @@
 explode by commas
+test with many input
 create a array
 return the created array
