@@ -14,6 +14,6 @@ class StringToArray
 	 */
 	public function convert()
 	{
-
+		return array();
 	}
 }
