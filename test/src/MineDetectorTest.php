@@ -44,16 +44,6 @@ class StringToArrayTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals($expectedResult, $convertedResult);
 	}
 
-//	/**
-//	 * Test split by new line.
-//	 *
-//	 * @dataProvider splitByNewLineProvider
-//	 */
-//	public function testSplitByNewLine($expected, $inputWithNewLines)
-//	{
-//		$convertedResult = $this->stringToArrayEntity->convert($inputWithNewLines);
-//	}
-
 	/**
 	 * Provider for input validation with wrong inputs.
 	 */
@@ -81,7 +71,7 @@ class StringToArrayTest extends PHPUnit_Framework_TestCase
 			'example1'            => array(array('a','b','c'), 'a,b,c'),
 			'example2'            => array(array('100','982','444','990','1'), '100,982,444,990,1'),
 			'example3'            => array(array('Mark','Anthony','marka@lib.de'), 'Mark,Anthony,marka@lib.de'),
-			'with new line'       => array(array('Mark','Anthony','marka@lib.de'), 'Mark,Anthony'."\n".'marka@lib.de'),
+			'with new line'       => array(array('Mark','Anthony','marka@lib.de'), 'Mark,Anthony'.PHP_EOL.'marka@lib.de'),
 		);
 	}
 

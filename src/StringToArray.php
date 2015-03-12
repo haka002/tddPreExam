@@ -19,6 +19,16 @@ class StringToArray
 			throw new InvalidArgumentException();
 		}
 
-		return explode(',', $string);
+		$lines          = explode(PHP_EOL, $string);
+
+		$splittedValues = array();
+
+		foreach ($lines as $line)
+		{
+			$splittedValue  = explode(',', $line);
+			$splittedValues = array_merge($splittedValues, $splittedValue);
+		}
+
+		return $splittedValues;
 	}
 }
