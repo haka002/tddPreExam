@@ -11,7 +11,7 @@ class StringToArrayTest extends PHPUnit_Framework_TestCase
 	 *
 	 * @returns void
 	 */
-	public function tesExistClass()
+	public function testExistClass()
 	{
 		$stringToArray = new StringToArray();
 
