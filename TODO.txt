@@ -1,5 +1,3 @@
-validate input
-accept only strings
 explode by commas
 create a array
 return the created array
