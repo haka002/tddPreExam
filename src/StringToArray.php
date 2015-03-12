@@ -26,15 +26,7 @@ class StringToArray
 			return $this->createConvertedDo($lines);
 		}
 
-		$splittedValues = array();
-
-		foreach ($lines as $line)
-		{
-			$splittedValue  = $this->parseLine($line);
-			$splittedValues = array_merge($splittedValues, $splittedValue);
-		}
-
-		return $splittedValues;
+		return $this->parseLinesToArray($lines);
 	}
 
 	/**
@@ -83,5 +75,25 @@ class StringToArray
 		$convertedValuesDo->setConvertedData($combinedValues);
 
 		return $convertedValuesDo;
+	}
+
+	/**
+	 * Parse line to the numeric array.
+	 *
+	 * @param array $lines   Convertables lines.
+	 *
+	 * @return array   The converted array.
+	 */
+	private function parseLinesToArray($lines)
+	{
+		$splittedValues = array();
+
+		foreach ($lines as $line)
+		{
+			$splittedValue  = $this->parseLine($line);
+			$splittedValues = array_merge($splittedValues, $splittedValue);
+		}
+
+		return $splittedValues;
 	}
 }
