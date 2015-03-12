@@ -1,3 +1,0 @@
-eplode by \n -> return 2 dimension array
-count the rows and count the lines
-return good array
