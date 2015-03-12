@@ -67,10 +67,10 @@ class StringToArrayTest extends PHPUnit_Framework_TestCase
 			'one data with empty' => array(array('almafa'), 'almafa'),
 			'alone'               => array(array(''), ''),
 			'duble empty'         => array(array('',''), ','),
-//			'two values'          => array(array('almafa', 'balmafa'), 'almafa,balmafa'),
-//			'example1'            => array(array('a','b','c'), 'a,b,c'),
-//			'example2'            => array(array('100','982','444','990','1'), '100,982,444,990,1'),
-//			'example3'            => array(array('Mark','Anthony','marka@lib.de'), 'Mark,Anthony,marka@lib.de'),
+			'two values'          => array(array('almafa', 'balmafa'), 'almafa,balmafa'),
+			'example1'            => array(array('a','b','c'), 'a,b,c'),
+			'example2'            => array(array('100','982','444','990','1'), '100,982,444,990,1'),
+			'example3'            => array(array('Mark','Anthony','marka@lib.de'), 'Mark,Anthony,marka@lib.de'),
 		);
 	}
 
