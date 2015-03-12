@@ -15,7 +15,7 @@ class StringToArrayTest extends PHPUnit_Framework_TestCase
 	{
 		$stringToArray = new StringToArray();
 
-		$this->assertTrue(is_array($stringToArray->convertStringToArray()));
+		$this->assertTrue(is_array($stringToArray->convert()));
 	}
 
 

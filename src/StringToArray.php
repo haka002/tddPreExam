@@ -5,5 +5,15 @@
  */
 class StringToArray
 {
+	/**
+	 * Convert the got string value to array.
+	 *
+	 * @param string $string   The convertable string.
+	 *
+	 * @return array   The converted array
+	 */
+	public function convert()
+	{
 
+	}
 }
