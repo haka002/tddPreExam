@@ -45,6 +45,16 @@ class StringToArrayTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
+	 * Test split by new line.
+	 *
+	 * @dataProvider splitByNewLineProvider
+	 */
+	public function testSplitByNewLine($expected, $inputWithNewLines)
+	{
+		$convertedResult = $this->stringToArrayEntity->convert($inputWithNewLines);
+	}
+
+	/**
 	 * Provider for input validation with wrong inputs.
 	 */
 	public function validateInputProvider()
