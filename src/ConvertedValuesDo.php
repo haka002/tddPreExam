@@ -6,11 +6,18 @@
  */
 class ConvertedValuesDo {
 	/**
-	 * An array for passing the converted data.
+	 * The labels of the converted data
 	 *
 	 * @var array
 	 */
-	private $convertedData;
+	private $labels;
+
+	/**
+	 * The values of the converted data
+	 *
+	 * @var array
+	 */
+	private $values;
 
 	/**
 	 * Gets the array of the converted data.
@@ -19,16 +26,20 @@ class ConvertedValuesDo {
 	 */
 	public function getConvertedData()
 	{
-		return $this->convertedData;
+		return array($this->labels, $this->values);
 	}
 
 	/**
 	 * Set the converted values.
 	 *
-	 * @param array $convertedData  The converted data.
+	 * @param array $labels  The labels of the convered data.
+	 * @param array $values  The values of the converted data
+	 *
+	 * @return void
 	 */
-	public function setConvertedData(array $convertedData)
+	public function setConvertedData(array $labels, array $values)
 	{
-		$this->convertedData = $convertedData;
+		$this->labels = $labels;
+		$this->values = $values;
 	}
 }

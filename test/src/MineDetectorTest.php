@@ -45,6 +45,24 @@ class StringToArrayTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
+	 * Test the labelled arrays.
+	 *
+	 * @dataProvider labelledArraysProvider
+	 */
+	public function testLabelledArrays($convertableParam)
+	{
+		$convertedResult = $this->stringToArrayEntity->convert($convertableParam);
+
+		$expectedResult = new ConvertedValuesDo();
+		$expectedResult->setConvertedData(
+			array('Name', 'Email', 'Phone'),
+			array(array('Mark','marc@be.com','998'), array('Noemi','noemi@ac.co.uk','888'))
+		);
+
+		$this->assertEquals($expectedResult, $convertedResult);
+	}
+
+	/**
 	 * Provider for input validation with wrong inputs.
 	 */
 	public function validateInputProvider()
@@ -75,5 +93,13 @@ class StringToArrayTest extends PHPUnit_Framework_TestCase
 		);
 	}
 
-
+	/**
+	 * Provider for labelled inputs.
+	 */
+	public function labelledArraysProvider()
+	{
+		return array(
+			'with labels' => array('#useFirstLineAsLabels'.PHP_EOL.'Name,Email,Phone'.PHP_EOL.'Mark,marc@be.com,998'.PHP_EOL.'Noemi,noemi@ac.co.uk,888')
+		);
+	}
 }

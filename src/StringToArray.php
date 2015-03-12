@@ -68,11 +68,15 @@ class StringToArray
 		unset($lines[0]);
 		unset($lines[1]);
 
-		$combinedValues = array_combine($labels, $lines);
+		$values = array();
+
+		foreach ($lines as $line)
+		{
+			$values[] = $this->parseLine($line);
+		}
 
 		$convertedValuesDo = new ConvertedValuesDo();
-
-		$convertedValuesDo->setConvertedData($combinedValues);
+		$convertedValuesDo->setConvertedData($labels, $values);
 
 		return $convertedValuesDo;
 	}
