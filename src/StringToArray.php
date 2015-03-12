@@ -12,8 +12,13 @@ class StringToArray
 	 *
 	 * @return array   The converted array
 	 */
-	public function convert()
+	public function convert($string)
 	{
+		if (!gettype($string) != 'string')
+		{
+			throw new InvalidArgumentException();
+		}
+
 		return array();
 	}
 }

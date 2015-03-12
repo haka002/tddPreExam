@@ -34,10 +34,28 @@ class StringToArrayTest extends PHPUnit_Framework_TestCase
 	 * Test validate input with wrong params
 	 *
 	 * @expectedException InvalidArgumentException
+	 *
+	 * @dataProvider validateInputProvider
 	 */
-	public function testValidateInput()
+	public function testValidateInput($convertableParam)
 	{
+		$this->stringToArrayEntity->convert($convertableParam);
+	}
 
+	/**
+	 * Provider for input validation with wrong inputs.
+	 */
+	public function validateInputProvider()
+	{
+		return array(
+			array(
+				'null'    => array(''),
+				'integer' => 34,
+				'array'   => array(1,23,4,5),
+				'float'   => 3.234,
+				'boolean' => true
+			),
+		);
 	}
 
 
