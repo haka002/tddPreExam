@@ -4,7 +4,7 @@
  * Data object for the 3. exercise.
  *
  */
-class ConvertedDo {
+class ConvertedValuesDo {
 	/**
 	 * An array for passing the converted data.
 	 *
