@@ -23,16 +23,14 @@ class StringToArray
 
 		if ($this->isFirstLineAsLabelled($lines[0]))
 		{
-			$labels = $this->parseLine($lines[2]);
-
-			return $this->getConvertedDo($labels, $lines);
+			return $this->createConvertedDo($lines);
 		}
 
 		$splittedValues = array();
 
 		foreach ($lines as $line)
 		{
-			$splittedValue = $this->parseLine($line);
+			$splittedValue  = $this->parseLine($line);
 			$splittedValues = array_merge($splittedValues, $splittedValue);
 		}
 
@@ -66,18 +64,19 @@ class StringToArray
 	/**
 	 * Gets the do of the values.
 	 *
-	 * @param array $labels   The labels of the array.
-	 * @param array $values   The values of the array.
+	 * @param array $lines   The converteable lines.
 	 *
 	 * @return ConvertedValuesDo   The converted values in a do.
 	 */
-	private function getConvertedDo($labels, $values)
+	private function createConvertedDo($lines)
 	{
-		// We have to unset the first and the second lines, because it dont contains any values.
-		unset($values[0]);
-		unset($values[1]);
+		$labels = $this->parseLine($lines[1]);
 
-		$combinedValues = array_combine($labels, $values);
+		// We have to unset the first and the second lines, because it dont contains any values.
+		unset($lines[0]);
+		unset($lines[1]);
+
+		$combinedValues = array_combine($labels, $lines);
 
 		$convertedValuesDo = new ConvertedValuesDo();
 
